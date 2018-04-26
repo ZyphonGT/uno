@@ -1,0 +1,42 @@
+*****************
+**  Game Plans **
+*****************
+
+
+<> if (kalo AI punya Kartu(x) yang angka sama kyk topCard, tapi warna beda)
+	if (player gapunya kartu warna topCard && gapunya kartu value topCard)
+		taro Kartu(x)
+
+<> if (kartu musuh <= 3)
+	
+	
+	
+
+
+
+
+
+
+
+******************** SPECIFIC ORDER ********************
+
+1) If (enemyCardCount < 3), then play kartu musuh dikit
+	dia ga punya warna kartu 2+ kita
+    		jadi taro 2+
+	kalo punya
+		skip	
+
+2) 
+
+3) 
+
+4) 
+
+5) 
+
+6) Play number card with the color AI have the most
+
+7) Play any eligible Number/Action Card
+
+8) Play any Wild Card
+

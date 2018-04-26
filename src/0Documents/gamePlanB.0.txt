@@ -1,0 +1,11 @@
+*****************
+**  Game Plans **
+*****************
+******************** SPECIFIC ORDER ********************
+
+1) Play Number Card with the color AI have the most
+
+2) Play Action Card with the color AI have the most
+
+3) Play any Wild Card
+

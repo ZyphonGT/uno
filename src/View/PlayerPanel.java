@@ -144,7 +144,7 @@ public class PlayerPanel extends JPanel implements GameConstants {
 	class MyButtonHandler implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e) {
-			
+
 			if(player.isMyTurn()){
 				
 				if(e.getSource()==draw)

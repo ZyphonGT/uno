@@ -1,0 +1,84 @@
+*****************
+  19 April 2018 
+*****************
+<> Changes
++ Added "cardColor" in Player.java
++ Added "getCardColor()" in Player.java
+
+* Modified play(UnoCard) in PC.java
+    > now keeps track of Card Colors and Wild Cards
+
+* Modified performWild(WildCard) in Server.java
+    > now AI decide color based on most color it owns 
+
+----------------------------------------------------------------------------------------
+
+<> Current Strategy Order
+1. When using WildCard, selects the color with the most cards [NEW]
+
+----------------------------------------------------------------------------------------
+<> Task
+1. Find out how many cards opponent has left
+2. When opponent has one card, avoid his color at all cost
+3. Fix game's bug
+    > AI doesn't draw card when doesnt have any valid move (Only draws when Human Draws)
+    > Game crashes when HUMAN clicked cancel at wildCard color pick
+
+********************
+  20-21 April 2018 
+********************
+
+<> Summary
+~ Now AI has access to Player's Hand Details (cardColor, cardValue)
+~ Trying different gamePlans (locatied at src/0Documents)
+~ Bugfix (faulty drawCard)
+
+----------------------------------------------------------------------------------------
+
+<> Changes
++ Added "int enemyCardCount" in Player.java (Setter&Getter)
++ Added "LinkedList<UNOCard> enemyCards" in Player.java (Setter&Getter)
++ Added "Server server" in Game.java (Setter)
+
+* Modified "boolean isOver()" in Game.java
+    > now tells AI the amount of player's card
+    > now sends AI the list of all player's cards
+* Modified "boolean isValidMove(UNOCard) in Server.java
+    > now prints last played card in console
+* Modified "UNOCard modifyFirstCard(UNOCard)" in Server.java
+    > now re-rolls first card if it's a wild card
+* Modified "void playPC(UNOCard)" in Game.java
+    > now method calls server.requestCard()
+* Modified "UNOCard peekTopCard()" in Server.java
+    > now update server in Game.java (Hotfix)
+
+----------------------------------------------------------------------------------------
+
+<> Discovered Bug
+    > If player chooses "Draw" in first Turn, AI cant detect player card
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+**************
+* Game Plans *
+**************
+
+---------------------------------------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------------------------------------
+
+		/** 
+		* Default Strategy
+		*/
+
+		if(getAllCards().size()==2) {
+            this.saysUNO();
+        }
+
+		for (UNOCard card : getAllCards()) {
+			if (card.getColor().equals(color) || card.getValue().equals(value)) {	// Asalkan warna atau angka sama
+                System.out.println("Picked Normal Card...");   						// maka pilih kartu itu
+				MouseEvent doPress = new MouseEvent(card, MouseEvent.MOUSE_PRESSED,
+						System.currentTimeMillis(),
+						(int) MouseEvent.MOUSE_EVENT_MASK,5,5, 1, true);
+
+				card.dispatchEvent(doPress);
+				
+				MouseEvent doRelease = new MouseEvent(card, MouseEvent.MOUSE_RELEASED,
+						System.currentTimeMillis(),
+						(int) MouseEvent.MOUSE_EVENT_MASK,5,5, 1, true);
+				card.dispatchEvent(doRelease);
+				
+				done = true;
+				break;
+			}
+		}
+
+		// if no card was found, play wild card
+		if (!done) {
+			for (UNOCard card : getAllCards()) {
+				if (card.getType() == WILD) {
+                    System.out.println("Picked Wild Card...");
+                    MouseEvent doPress = new MouseEvent(card,
+							MouseEvent.MOUSE_PRESSED,
+							System.currentTimeMillis(),
+							(int) MouseEvent.MOUSE_EVENT_MASK, 5, 5, 1, true);
+					card.dispatchEvent(doPress);
+					
+					MouseEvent doRelease = new MouseEvent(card, MouseEvent.MOUSE_RELEASED,
+							System.currentTimeMillis(),
+							(int) MouseEvent.MOUSE_EVENT_MASK, 5, 5, 1, true);
+					card.dispatchEvent(doRelease);
+					
+					done = true;
+					break;
+				}
+			}
+		}
+		
+		if(getTotalCards()==1 || getTotalCards()==2) {
+            saysUNO();
+            System.out.println("Said UNO...");
+        }
+        
+        /**
+        *   END OF STRATEGY
+        */
+		
+---------------------------------------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------------------------------------
